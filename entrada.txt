@@ -1,0 +1,253 @@
+CKY
+
+1
+    [ c d '' ab a ba aba ]
+    S [ a b c ]
+
+    S > AB | c
+    A > a
+    B > b
+    fi
+
+2
+    [ ab '' ]
+    S [ a b ]
+    S > AB | eps
+    C > AB
+    A > a
+    B > b
+    fi
+
+3
+    [ aa ]
+    S [ a ]
+    S > AA | BB
+    A > a
+    B > a 
+    fi
+
+4
+    [ azb ]
+    S [ a z b ]
+    A > a       B > a       H > b       I > b       J > b       Z > z
+    E > AZ      F > BZ      G > AZ      C > ZI      D > ZJ
+    AC > AC     AD > AD     BC > BC     BD > BD     EH > EH     EI > EI         EJ > EJ
+    FH > FH     FI > FI     FJ > FJ     GH > GH     GI > GI     GJ > GJ         AH > AH         AI > AI         AJ > AJ         AF > AF
+    BF > BF     AG > AG     BG > BG     AB > AB     CD > CD     CE > CE         CF > CF         CG > CG         DE > DE         DF > DF
+    DG > DG     EF > EF     EG > EG     FG > FG     FH > FH     FI > FI         FJ > FJ         GH > GH         GI > GI         GJ > GJ
+    fi
+
+5
+    [ caab caba bcabbcab ]
+    S [ a b c ]
+    S > ZZ | AB | DE | EF | UU | eps
+    Z > AB | DE | EF | UU
+    A > a
+    B > b 
+    C > c
+    D > BC
+    E > CA
+    F > AB
+    U > DF
+	X > a
+    fi
+fi
+
+
+CNF
+
+1
+    [ ]
+    S [ a b c ]
+    S > AA | AB | CC
+    A > BC | a
+    B > b | a
+    C > c
+    fi
+
+2
+    [ ]
+    S [ a ]
+    S > AA | AS
+    A > a
+    fi
+
+3.1
+    [ ]
+    S [ a b ]
+    S > A
+    A > a | b
+    fi
+
+3.2
+    [ ]
+    S [ a b ]
+    S > B
+    B > A | a
+    A > a | b | B
+    fi
+
+3.3
+    [ ]
+    S [ a ]
+    S > S | a
+    fi
+
+3.4
+    [ ]
+    S [ a ]
+    S > AB
+    A > B
+    B > A | a
+    fi
+
+4.1
+    [ ]
+    S [ a b ]
+    S > AB
+    A > a
+    B > b | eps
+    fi
+
+4.2
+    [ ]
+    S [ a b c ]
+    S > ABC
+    A > a | eps
+    B > b | eps
+    C > c | eps
+    fi
+
+4.3
+    [ ]
+    S [ a b ]
+    S > ABA
+    A > a | eps
+    B > b
+    fi
+
+4.4 
+    [ ]
+    S [ a b ]
+    S > AB
+    A > AB | a
+    B > b | eps
+    fi
+
+4.5
+    [ ]
+    S [ b c d ]
+    S > AD
+    A > BC
+    B > b | eps
+    C > c | eps
+    D > d
+    fi
+
+4.6
+    [ ]
+    S [ ]
+    S > A
+    A > B
+    B > A | eps
+    fi
+
+5.1
+    [ ]
+    S [ a b c ]
+    S > ABC
+    A > a
+    B > b
+    C > c
+    fi
+
+5.2
+    [ ]
+    S [ a b c ]
+    S > ABCBACB
+    A > a
+    B > b
+    C > c
+    fi
+
+5.3
+    [ ]
+    S [ b c ]
+    S > CBC
+    A > CBB
+    B > b
+    C > c
+    fi
+
+6.1
+    [ ]
+    S [ a b ]
+    S > aA
+    A > b
+    fi
+
+6.2
+    [ ]
+    S [ a b ]
+    S > aAa
+    A > aaB
+    B > b
+    fi
+
+7
+    [ ]
+    S [ a b c ]
+    S > ASA | aB | C          
+    A > B | eps 
+    B > b | C C        
+    C > c
+    fi
+
+fi
+
+PCKY
+
+1
+    [ aa ab bb c ]
+    S [ a b c ]
+    S > AA 0.7 | c 0.2 | eps 0.1
+    A > a 0.2 | b 0.8
+    fi
+
+2 
+    [ aa ]
+    S [ a ]
+    S > AA 0.4 | BB 0.2 | BA 0.4
+    X > AA 1
+    A > a 1
+    B > a 1
+    fi
+
+3
+    [ cdcdaa aacdcdcdaacd ]
+    S [ a b c d ]
+    S > ZZ 0.35 | PQ 0.25 | UZ 0.25 | eps 0.15
+    Z > ZZ 0.35 | PQ 0.15 | UZ 0.25 | b 0.25
+    P > AA 0.6 | BB 0.4
+    Q > CD 1
+    U > QQ 0.75 | b 0.25
+    A > a 1
+    B > b 1
+    C > c 0.9 | d 0.1
+    D > d 1
+    fi
+
+
+fi
+
+
+
+
+
+
+
+
+
+
+
+
